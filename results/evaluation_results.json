@@ -12,20 +12,20 @@
     },
     {
       "method": "zero_shot_chat",
-      "accuracy": 0.42,
-      "correct": 42,
+      "accuracy": 0.61,
+      "correct": 61,
       "total": 100
     },
     {
       "method": "golden_labels",
-      "accuracy": 0.87,
-      "correct": 87,
+      "accuracy": 0.84,
+      "correct": 84,
       "total": 100
     },
     {
       "method": "icm",
-      "accuracy": 0.43,
-      "correct": 43,
+      "accuracy": 0.87,
+      "correct": 87,
       "total": 100
     }
   ]

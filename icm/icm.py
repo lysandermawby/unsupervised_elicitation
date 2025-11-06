@@ -126,6 +126,8 @@ class ICMSearcher:
 
         # Main search loop
         best_score = self._calculate_score(labeled_data)
+        best_labeled_data = labeled_data.copy()
+        current_score = best_score
         temperature = self.initial_temperature
 
         print(f"Initial score: {best_score:.4f}")
@@ -156,11 +158,17 @@ class ICMSearcher:
             new_score = self._calculate_score(new_labeled_data)
 
             # Accept or reject (simulated annealing)
-            delta = new_score - best_score
+            delta = new_score - current_score
 
             if delta > 0 or random.random() < math.exp(delta / temperature):
+                # Accept the new solution
                 labeled_data = new_labeled_data
-                best_score = new_score
+                current_score = new_score
+
+                # Update best if this is better than best ever seen
+                if new_score > best_score:
+                    best_score = new_score
+                    best_labeled_data = new_labeled_data.copy()
 
             # Progress logging
             if iteration > 0 and iteration % 100 == 0:
@@ -171,9 +179,9 @@ class ICMSearcher:
                 print(f"All {len(examples)} examples labeled. Stopping early.")
                 break
 
-        # Convert to final format
+        # Convert to final format (use best_labeled_data, not current labeled_data)
         labeled_examples = []
-        for idx, data in labeled_data.items():
+        for idx, data in best_labeled_data.items():
             labeled_examples.append({
                 "input": data["example"].input_text,
                 "label": data["label"],
@@ -186,7 +194,7 @@ class ICMSearcher:
             iterations=iteration + 1,
             convergence_info={
                 "final_temperature": temperature,
-                "labeled_count": len(labeled_data)
+                "labeled_count": len(best_labeled_data)
             },
             metadata={
                 "model_name": self.model_name,

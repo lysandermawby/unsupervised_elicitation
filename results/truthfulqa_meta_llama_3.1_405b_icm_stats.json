@@ -1,10 +1,10 @@
 {
-  "num_examples": 256,
-  "final_score": -0.02810353586588619,
-  "iterations": 290,
+  "num_examples": 250,
+  "final_score": -0.1256982184236163,
+  "iterations": 265,
   "convergence_info": {
-    "final_temperature": 0.4575623639476672,
-    "labeled_count": 256
+    "final_temperature": 0.4638121952573099,
+    "labeled_count": 250
   },
   "metadata": {
     "model_name": "meta-llama/Meta-Llama-3.1-405B",
@@ -12,11 +12,11 @@
     "dataset_size": 256
   },
   "label_distribution": {
-    "True": 124,
-    "False": 132
+    "True": 115,
+    "False": 135
   },
   "label_percentages": {
-    "True": 48.4375,
-    "False": 51.5625
+    "True": 46.0,
+    "False": 54.0
   }
 }
