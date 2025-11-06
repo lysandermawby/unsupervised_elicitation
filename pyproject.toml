@@ -1,0 +1,18 @@
+[project]
+name = "new-unsupervised-elicitation"
+version = "0.1.0"
+description = "ICM reproduction using Hyperbolic API"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0",
+    "matplotlib>=3.8.0",
+    "numpy>=1.24.0",
+    "tqdm>=4.65.0",
+    "dotenv>=0.9.9",
+    "dataset>=1.6.2",
+]
+
+# Note: torch and transformers removed - using Hyperbolic API instead of local models
