@@ -281,7 +281,6 @@ def main():
         print(f"  ICM results:  {icm_results}")
         print(f"  Evaluation:   {eval_output}")
         print(f"  Plot:         {plot_output}")
-        print(f"  Plot (PDF):   {plot_output.with_suffix('.pdf')}")
 
         # Print evaluation summary
         if eval_output.exists():

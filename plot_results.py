@@ -8,7 +8,7 @@ import json
 import argparse
 import matplotlib.pyplot as plt
 import numpy as np
-from pathlib import Path
+# from pathlib import Path
 
 
 def plot_results(results_path: str, output_path: str = "results_plot.png", title: str = "TruthfulQA Performance"):
@@ -96,11 +96,6 @@ def plot_results(results_path: str, output_path: str = "results_plot.png", title
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"Plot saved to: {output_path}")
 
-    # Also save as PDF for publication quality
-    pdf_path = Path(output_path).with_suffix('.pdf')
-    plt.savefig(pdf_path, bbox_inches='tight')
-    print(f"PDF saved to: {pdf_path}")
-
     plt.close()
 
 
@@ -137,12 +132,12 @@ def plot_with_error_bars(
     means = []
     stds = []
 
-    method_order = {
-        "random_baseline": 0,
-        "zero_shot": 1,
-        "icm": 2,
-        "golden_labels": 3
-    }
+    # method_order = {
+    #     "random_baseline": 0,
+    #     "zero_shot": 1,
+    #     "icm": 2,
+    #     "golden_labels": 3
+    # }
 
     method_order_error = {
         "zero_shot_base": 0,

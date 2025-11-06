@@ -1,0 +1,32 @@
+{
+  "train_dataset": "data/train_truthfulqa.json",
+  "test_dataset": "data/test_truthfulqa.json",
+  "num_train_examples": 256,
+  "num_test_examples": 100,
+  "results": [
+    {
+      "method": "zero_shot_base",
+      "accuracy": 0.78,
+      "correct": 78,
+      "total": 100
+    },
+    {
+      "method": "zero_shot_chat",
+      "accuracy": 0.42,
+      "correct": 42,
+      "total": 100
+    },
+    {
+      "method": "golden_labels",
+      "accuracy": 0.87,
+      "correct": 87,
+      "total": 100
+    },
+    {
+      "method": "icm",
+      "accuracy": 0.43,
+      "correct": 43,
+      "total": 100
+    }
+  ]
+}

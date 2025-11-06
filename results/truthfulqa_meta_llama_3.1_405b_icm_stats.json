@@ -1,0 +1,22 @@
+{
+  "num_examples": 256,
+  "final_score": -0.02810353586588619,
+  "iterations": 290,
+  "convergence_info": {
+    "final_temperature": 0.4575623639476672,
+    "labeled_count": 256
+  },
+  "metadata": {
+    "model_name": "meta-llama/Meta-Llama-3.1-405B",
+    "alpha": 1.0,
+    "dataset_size": 256
+  },
+  "label_distribution": {
+    "True": 124,
+    "False": 132
+  },
+  "label_percentages": {
+    "True": 48.4375,
+    "False": 51.5625
+  }
+}
